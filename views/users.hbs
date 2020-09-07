@@ -1,0 +1,16 @@
+
+ 
+<h3>Utilisateur Nom : {{name}} - Prénom : {{firstname}}</h3>
+
+
+<select name="data" id="user">
+    {{#compare data null operator="=="}} 
+        <option value="rien">Il n'y a pas de données dans la base users</option>
+    {{else}} 
+           <option value="0" >Select a user to modify his datas</option>
+        {{#each data}}
+            <option value="{{this._id}}" >{{this.name}} {{this.firstName}} - {{this.country.name}} - {{this.country.code}}
+            </option>
+        {{/each}}
+    {{/compare}}
+</select>

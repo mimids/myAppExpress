@@ -1,0 +1,9 @@
+ 
+ 
+<h3>Countries</h3>
+<ul>
+    {{#each data}}
+        <li>Nom : {{this.name}} - code : {{this.code}}</li>
+    {{/each}}
+</ul>
+ 

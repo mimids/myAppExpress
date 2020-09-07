@@ -1,0 +1,11 @@
+<h1>{{ stitle}}</h1>
+<h2>Express App : {{title}}</h2><br>
+<select name="data">
+  {{#compare data null operator="=="}}
+  <option value="rien">Il n'y a pas de données dans la base users</option>
+  {{else}}
+  {{#each data}}
+  <option value='{{this._id}}'>{{this.libelle}}</option>
+  {{/each}}
+  {{/compare}}
+</select>

@@ -1,0 +1,108 @@
+{
+  "GET/": {
+    "controler": "getView",
+    "view": "index",
+    "title": "Bienvenue dans le framework Node/Express"
+  },
+
+  "GET/users": {
+    "controler": "populate",
+    "modelName": "Users",
+    "view": "users",
+    "pop_ref": "country"
+},
+  "GET/usersdb": {
+    "controler": "finder",
+    "modelName": "Users",
+    "view":"usersdb",
+    "return_type" : "application/json",
+    "stitle" : "usersDB",
+    "title" : "Liste déroulante list users"
+  },
+  "GET/exos": {
+    "controler": "finder",
+    "modelName": "Exercices",
+    "view":"exos",
+    "return_type" : "application/json",
+    "stitle" : "exos",
+    "title" : "Liste déroulante"
+  },
+  "GET/countries": {
+    "controler": "finder",
+    "modelName": "Countries",
+    "view":"countries",
+    "stitle" : "countries",
+    "title" : "Liste déroulante"
+  },
+
+  "GET/countriesdb": {
+    "controler": "finder",
+    "modelName": "Countries",
+    "view":"countriesdb",
+    "stitle" : "countries",
+    "title" : "Liste déroulante countries"
+  },
+
+  "GET/formUser": {
+    "controler": "findByIdWithList",
+    "modelName": "Users",
+    "modelList": "Countries",
+    "view": "formUser",
+    "form_action": "/modifyUser"
+},
+
+  "POST/formUser": {
+    "controler": "findByIdWithList",
+    "modelName": "Users",
+    "view":"formUser",
+    "modelList": "Countries",
+    "form_action": "/modifyUser",
+    "basedonne": "users"
+  },
+  "GET/modifyUser": {
+    "controler": "updateById",
+    "modelName": "Users",
+    "view":"modifyUser",
+    "modelList": "Countries",
+    "basedonne": "users"
+  },
+  "POST/modifyUser": {
+    "controler": "updateById",
+    "modelName": "Users",
+    "modelList": "Countries",
+    "view":"modifyUser",
+    "basedonne": "users"
+  },
+
+
+  "GET/newUser": {
+    "controler": "finder",
+    "modelName": "Users",
+    "modelList": "Countries",
+    "view" : "formUser",
+    "form_action": "/createUser",
+    "title": "Create a new user",
+    "libelle": "creation"
+},
+
+  "GET/createUser": {
+    "controler": "insertOne",
+    "modelList": "Countries",
+    "modelName": "Users",
+    "view":"modifyUser"
+  },
+
+"POST/createUser": {
+  "controler": "insertOne",
+  "modelList": "Countries",
+  "modelName": "Users",
+  "view":"modifyUser"
+},
+"GET/deleteUser": {
+  "controler": "deleteById",
+  "modelName": "Users",
+  "view" : "usersdb"
+}
+
+
+}
